@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Order
+  data:
+    mongodb:
+      uri: mongodb://mongo:27017/orderdb
+  cloud:
+    config:
+        uri: http://config-server:8888
+        name: order
+        profile: dev
+        label: main
+        import: config-server
+server:
+  port: 8082
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka:8761/eureka/
+
